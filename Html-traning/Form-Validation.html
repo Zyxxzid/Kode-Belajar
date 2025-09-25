@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    form{
+       width: 600px;
+       padding: 18px;  
+    }
+    input{
+        padding: 5px;
+    }
+    input:valid{
+        outline: 2px solid green;
+        box-shadow: 0 0 12px green;
+        border: none;
+    }
+    input:invalid,input:required
+    {
+        outline: 2px solid red;
+        box-shadow: 0 0 12px red;
+        border: none;
+    }
+
+    label{
+        display: block;
+        margin: 5px;
+    }
+</style>
+<body>
+    <form action="" method="post" autocomplete="off ">
+        <div class="belajar">
+             <label for="nama">masukan nama</label>
+             <input type="text" name="nama" id="nama" autocomplete="off" autofocus>
+        </div>
+        <div class="belajar">
+             <label for="email">Masukan email kamu</label>
+             <input type="email" name="email" id="email" autocomplete="off" oninvalid="this.setCustomValidity('ini harus di isi oleh @ ')" oninput="this.setCustomValidity('')">
+        </div>
+        <div class="belajar">
+             <label for="nama">masukan no HP</label>
+             <input type="tel" name="nohp" id="nohp">
+        </div>
+        <div class="belajar">
+             <label for="nama">masukan url</label>
+             <input type="url" name="url" id="url">
+        </div>
+        <div class="belajar">
+             <label for="angka">masukan masukan angka</label>
+             <input type="number" name="angka" id="angka">
+        </div>
+        <div class="belajar">
+             <label for="range">masukan range</label>
+             <span class="awal"></span>
+             <input type="range" name="range" id="range" min="0" max="100" step="4">
+             <span class="akhir"></span>
+        </div>
+        <div class="belajar">
+             <label for="date">masukan nama</label>
+             <input type="date" name="date" id="date">
+        </div>
+        <div class="belajar">
+             <label for="color">masukan nama</label>
+             <input type="color" name="color" id="color">
+        </div>
+        <div class="belajar">
+             <label for="kode-post">kode-post</label>
+             <input type="text" name="post" id="post" pattern="^([1-9])[0-9]{4}$">
+        </div>
+        <div class="btn">
+            <button type="submit">Kirim</button>
+        </div>
+    </form>
+    <script>
+        const range = document.querySelector('#range')
+        const awal = document.querySelector('.awal')
+        const akhir = document.querySelector('.akhir')
+
+        awal.innerHTML = range.min
+        akhir.innerHTML = range.value
+        range.addEventListener('input', function(){
+            akhir.innerHTML = range.value;
+        });
+
+        const warna = document.querySelector('#color')
+        const bg = document.querySelector('body')
+
+        warna.addEventListener('input', function(){
+            bg.style.backgroundColor = warna.value
+        })
+    </script>
+</body>
+</html>

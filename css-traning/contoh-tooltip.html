@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.css">
+</head>
+<style>
+    .tooltip{
+        font-weight: bold;
+    }
+
+    .tooltip:hover{
+        cursor: help;
+        transition: .1026s;
+    }
+
+    .tooltip:hover + .tooltip-text{
+        visibility: visible;
+    }
+
+    .tooltip-text{
+        background-color: #333;
+        color: aliceblue;
+        padding: 5px 20px;
+        border-radius: 25px;
+        visibility: hidden;
+    }
+</style>
+<body>
+    <div>
+        <span class="tooltip">zaidan</span>
+        <span class="tooltip-text"> zaidan rezkyando</span>
+    </div>
+</body>
+</html>
