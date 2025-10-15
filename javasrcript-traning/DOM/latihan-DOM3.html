@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan pak Sandhi</title>
+</head>
+<style>
+
+  html, body{
+    height: 100%;
+  }
+  body{
+    text-align: center;
+  }
+  .dark-theme{
+    background-color: #333;
+    color: #fff;
+  }
+  .lingkaran{
+    border: 1px solid black;
+    margin: 12px auto;
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    border-radius: 100%;
+  }
+
+
+</style>
+<body>
+  <h1>Bermain Dengan Warna</h1>
+  <button>Ubah Warna</button>
+  <br><br>
+
+  <div class="lingkaran warna"></div>
+  <input type="range" name="range" class="slider" min="0" max="255">
+
+
+
+  <script>
+    const body = document.querySelector('body') 
+    const tombol = document.querySelector('button')
+
+    tombol.addEventListener('click', function(){
+      // document.body.setAttribute('class', 'dark-theme') 
+      document.body.classList.toggle('dark-theme')
+    })
+
+
+    //mengubah warna secara random dengan membuat button baru dari js
+     const newButton = document.createElement('button')
+      const newTxt = document.createTextNode('Warna Acak')
+
+      newButton.appendChild(newTxt)
+      newButton.setAttribute('type', 'button')
+      tombol.after(newButton)
+
+      newButton.addEventListener('click', function(){
+        const r =Math.round(Math.random()*255 + 1)
+        const g =Math.round(Math.random()*255 + 1)
+        const b =Math.round(Math.random()*255 + 1)
+        document.body.style.backgroundColor = 'rgb('+ r +', '+ g +', '+ b +')'
+      })
+
+
+      //ubah warna melalui slider
+      const slider = document.querySelector('.slider')
+      const warna = document.querySelector('.warna')
+
+      slider.addEventListener('input', function(){
+        const r = slider.value
+        const g = slider.value
+        const b = slider.value
+
+       warna.style.backgroundColor = 'rgb('+ r +', '+ g +', '+ b +')'
+      })
+
+
+      //ubah warna dari jarak kursor
+      document.body.addEventListener('mousemove', function(e){
+        //posisi mouse
+        //-> event.clientX
+        
+        //ukuran browser
+        //-> window.innerWidth
+
+        const xPose = Math.round((event.clientX / window.innerWidth) * 255)
+        const yPose = Math.round((event.clientY / window.innerHeight) * 255)
+
+        document.body.style.backgroundColor= 'rgb('+ xPose +','+ yPose +',100)'
+
+      })
+  </script>
+</body>
+</html>

@@ -9,7 +9,7 @@ function Zaidan (teman){
     teman() //
 }
 function Joko(){
-    console.log("hai juga")
+    console.log("teman : 'hai juga'")
 }
 Zaidan(Joko)
 //📝|penjelasan : 
@@ -42,3 +42,20 @@ let selesaiBelajar = (Callback) =>{
 }
 selesaiBelajar(() => console.log("-> waktunya istirahat"))
 
+
+//mengitung nilai a dan b
+console.log("\n>> Latihan 2 : ")
+function hitugNilai(a,b, Callback){
+    let hasilAkhir = a + b
+    Callback(hasilAkhir)
+}
+
+hitugNilai(21,12,(akhir) => {
+    console.log(`-> hasilnya adalah : ${akhir}`)
+})
+
+
+// menampilkan data array dengan forech
+console.log("\n>> Latihan 3 : ")
+let nilaiArray = [1,2,3,4,5]
+nilaiArray.forEach((a) => console.log(`-> angka array : ${a}`)) 

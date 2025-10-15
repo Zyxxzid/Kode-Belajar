@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    font-family: 'Poppins', sans-serif;
+  }
+  body{
+    background-color: #333;
+    color: white;
+  }
+  .container{
+    display: flex;
+    margin: 12px;
+    gap: 2rem;
+  }
+  .container .card{
+    display: flex;
+    background-color: rgb(30, 30, 31);
+    padding : 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0px 5px 12px black;
+  }
+
+  .container .card img{
+    width: 100px;
+    border-radius: 50px;
+  }
+
+  .container .card .biodata{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .container .card .biodata span{
+    color: gray;
+    transform: translateY(-12px);
+  }
+
+  .container .card .close{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left:28px;
+    transform: translateY(40px);
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .container .card:hover .close{
+    color: red;
+  }
+
+</style>
+<body>
+  <div class="container">
+    <div class="card">
+      <img src="img/profil.jpg" alt="foto-pribadi">
+      <div class="biodata">
+        <h3 class="name">Zaidan Rezkyando</h3>
+        <span class="telp">+62 85261939517</span>
+      </div>
+      <span class="close">x</span>
+    </div>
+    <div class="card">
+      <img src="img/joko.jpg" alt="foto-pribadi">
+      <div class="biodata">
+        <h3 class="name">Izumi Mujajoko</h3>
+        <span class="telp">+62 85261939517</span>
+      </div>
+      <span class="close">x</span>
+    </div>
+    <div class="card">
+      <img src="img/anto.jpg" alt="foto-pribadi">
+      <div class="biodata">
+        <h3 class="name">Furanto Andaya</h3>
+        <span class="telp">+62 85261939517</span>
+      </div>
+      <span class="close">x</span>
+    </div>
+    <div class="card">
+      <img src="img/faris.jpg" alt="foto-pribadi">
+      <div class="biodata">
+        <h3 class="name">Faris dimasto</h3>
+        <span class="telp">+62 85261939517</span>
+      </div>
+      <span class="close">x</span>
+    </div>
+  </div>
+
+  <script src="Traversal.js"></script>
+</body>
+</html>

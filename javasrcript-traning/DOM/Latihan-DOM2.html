@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show password</title>
+</head>
+<style>
+    *{
+        font-family: 'Poppins',sans-serif;
+    }
+
+    body{
+        padding: 12px;
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Register{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        background-color: #bebcbc;
+        width: 300px;
+        padding: 12px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.9);
+        border: 2px solid black;
+        gap: 12px;
+    }
+
+    .Register h1{
+        text-align: center;
+    }
+
+    .Register .username{
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+        width: 100;
+    }
+     .Register .username input{
+        padding: 5px;
+        border-radius: 12px;
+        border: none;
+        margin-top:12px;
+     }
+
+    .Register .password{
+        display: flex;
+        margin: 5px;
+    }
+
+    .Register .password .items-password{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Register .password{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Register .password .items-password input{
+        padding: 5px;
+        border-radius: 12px;
+        border: none;
+        margin-top: 12px;
+    }
+
+    .Register .password .check{
+        display: flex;
+    }
+
+    .Register .confirm{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Register .confirm input{
+        padding: 5px;
+        border-radius: 12px;
+        border: none;
+        margin-top: 12px;
+    }
+</style>
+<body>
+    <div class="Register">
+        <h1>Register Form</h1>
+        <div class="input">
+            <div class="username">
+            <label for="username">Username</label>
+            <input type="text" name="Username" id="username" required>
+        </div>
+        <div class="password">
+            <div class="items-password">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="check">
+                <input type="checkbox" name="lihat" id="lihat">
+                <p>Show Password</p>
+            </div>
+        </div>
+        <div class="confirm">
+            <label for="Confirm">Confirm Your password</label>
+            <input type="password" id="confirm" name="confirm">
+        </div>
+        </div>
+        <p>You Have an Account <a href="#">Login</a></p>
+        <button>Register</button>
+    </div>
+
+    <script>
+        const tombolCheck = document.getElementById('lihat')
+        const password = document.getElementById('password')
+
+        tombolCheck.addEventListener('click', function(){
+            password.type = (password.type == 'text' ? 'password' : 'text')
+        })
+    </script>
+</body>
+</html>
